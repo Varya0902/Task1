@@ -1,0 +1,29 @@
+2026-03-09 16:52:33.501 [main] INFO  by.drozdovskaya.ft.Main - Reading file: src/main/resources/data.txt
+2026-03-09 16:52:33.520 [main] WARN  by.drozdovskaya.ft.validator.impl.ArrayValidatorImpl - Line does not match regex: 1; 2; x3; 6..5; 77
+2026-03-09 16:52:33.520 [main] WARN  by.drozdovskaya.ft.Main - Invalid format: 1; 2; x3; 6..5; 77
+2026-03-09 16:52:33.520 [main] WARN  by.drozdovskaya.ft.validator.impl.ArrayValidatorImpl - Line does not match regex: {empty string}
+2026-03-09 16:52:33.520 [main] WARN  by.drozdovskaya.ft.Main - Invalid format: {empty string}
+2026-03-09 16:52:33.520 [main] INFO  by.drozdovskaya.ft.Main - Created 2 arrays
+2026-03-09 16:52:33.520 [main] INFO  by.drozdovskaya.ft.Main - ------------------------------
+2026-03-09 16:52:33.523 [main] INFO  by.drozdovskaya.ft.Main - Array: CustomArray{elements=[1, 2, 3]}
+2026-03-09 16:52:33.523 [main] INFO  by.drozdovskaya.ft.service.impl.CustomArrayServiceImpl - Min: 1
+2026-03-09 16:52:33.523 [main] INFO  by.drozdovskaya.ft.Main - Min: 1
+2026-03-09 16:52:33.523 [main] INFO  by.drozdovskaya.ft.service.impl.CustomArrayServiceImpl - Max: 3
+2026-03-09 16:52:33.523 [main] INFO  by.drozdovskaya.ft.Main - Max: 3
+2026-03-09 16:52:33.523 [main] INFO  by.drozdovskaya.ft.service.impl.CustomArrayServiceImpl - Sum: 6
+2026-03-09 16:52:33.523 [main] INFO  by.drozdovskaya.ft.Main - Sum: 6
+2026-03-09 16:52:33.523 [main] INFO  by.drozdovskaya.ft.service.impl.CustomArrayServiceImpl - Bubble sort done
+2026-03-09 16:52:33.523 [main] INFO  by.drozdovskaya.ft.Main - Sorted: CustomArray{elements=[1, 2, 3]}
+2026-03-09 16:52:33.523 [main] INFO  by.drozdovskaya.ft.Main - ------------------------------
+2026-03-09 16:52:33.523 [main] INFO  by.drozdovskaya.ft.Main - Array: CustomArray{elements=[11, 2]}
+2026-03-09 16:52:33.524 [main] INFO  by.drozdovskaya.ft.service.impl.CustomArrayServiceImpl - Min: 2
+2026-03-09 16:52:33.524 [main] INFO  by.drozdovskaya.ft.Main - Min: 2
+2026-03-09 16:52:33.524 [main] INFO  by.drozdovskaya.ft.service.impl.CustomArrayServiceImpl - Max: 11
+2026-03-09 16:52:33.524 [main] INFO  by.drozdovskaya.ft.Main - Max: 11
+2026-03-09 16:52:33.524 [main] INFO  by.drozdovskaya.ft.service.impl.CustomArrayServiceImpl - Sum: 13
+2026-03-09 16:52:33.524 [main] INFO  by.drozdovskaya.ft.Main - Sum: 13
+2026-03-09 16:52:33.524 [main] INFO  by.drozdovskaya.ft.service.impl.CustomArrayServiceImpl - Bubble sort done
+2026-03-09 16:52:33.524 [main] INFO  by.drozdovskaya.ft.Main - Sorted: CustomArray{elements=[2, 11]}
+2026-03-09 17:17:51.229 [main] INFO  by.drozdovskaya.ft.service.impl.CustomArrayServiceImpl - Bubble sort done
+2026-03-09 17:17:51.259 [main] INFO  by.drozdovskaya.ft.service.impl.CustomArrayServiceImpl - Min: -5
+2026-03-09 17:17:51.262 [main] INFO  by.drozdovskaya.ft.service.impl.CustomArrayServiceImpl - Sum: 25
