@@ -4,12 +4,13 @@ import by.drozdovskaya.ft.entity.CustomArray;
 import by.drozdovskaya.ft.exception.ArrayException;
 import by.drozdovskaya.ft.factory.impl.CustomArrayFactoryImpl;
 import by.drozdovskaya.ft.reader.impl.CustomFileReaderImpl;
-import by.drozdovskaya.ft.service.impl.CustomArrayServiceImpl;
+import by.drozdovskaya.ft.repository.impl.CustomArrayRepositoryImpl;
+import by.drozdovskaya.ft.specification.impl.SumRangeSpecification;
+import by.drozdovskaya.ft.comparator.IdComparator;
 import by.drozdovskaya.ft.validator.impl.ArrayValidatorImpl;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class Main {
@@ -20,41 +21,36 @@ public class Main {
         CustomFileReaderImpl reader = new CustomFileReaderImpl();
         ArrayValidatorImpl validator = new ArrayValidatorImpl();
         CustomArrayFactoryImpl factory = new CustomArrayFactoryImpl();
-        CustomArrayServiceImpl service = new CustomArrayServiceImpl();
+
+        CustomArrayRepositoryImpl repository = CustomArrayRepositoryImpl.getInstance();
 
         try {
-            logger.info("Reading file: {}", FILE_PATH);
             List<String> lines = reader.readLines(FILE_PATH);
-            List<CustomArray> arrays = new ArrayList<>();
 
             for (String line : lines) {
                 if (validator.isValid(line)) {
                     try {
                         CustomArray array = factory.createArrayFromLine(line);
-                        arrays.add(array);
+                        repository.add(array);
                     } catch (ArrayException e) {
-                        logger.warn("Parse error in line: {}", line);
+                        logger.error("Line parse error: {}", line);
                     }
-                } else {
-                    logger.warn("Invalid format: {}", line);
                 }
             }
 
-            logger.info("Created {} arrays", arrays.size());
+            int total = repository.query(a -> true).size();
+            logger.info("Total arrays in repository: {}", total);
 
-            for (CustomArray array : arrays) {
-                logger.info("------------------------------");
-                logger.info("Array: {}", array);
-                logger.info("Min: {}", service.findMin(array));
-                logger.info("Max: {}", service.findMax(array));
-                logger.info("Sum: {}", service.calculateSum(array));
+            if (total > 0) {
+                List<CustomArray> found = repository.query(new SumRangeSpecification(10, 50));
+                logger.info("Search result (Sum 10-50): {} items found", found.size());
 
-                service.sortBubble(array);
-                logger.info("Sorted: {}", array);
+                List<CustomArray> sorted = repository.sort(new IdComparator());
+                logger.info("Sort by ID completed. First ID: {}", sorted.get(0).getId());
             }
 
         } catch (ArrayException e) {
-            logger.error("App error: ", e);
+            logger.error("Critical error: {}", e.getMessage());
         }
     }
 }

@@ -27,3 +27,8 @@
 2026-03-09 17:17:51.229 [main] INFO  by.drozdovskaya.ft.service.impl.CustomArrayServiceImpl - Bubble sort done
 2026-03-09 17:17:51.259 [main] INFO  by.drozdovskaya.ft.service.impl.CustomArrayServiceImpl - Min: -5
 2026-03-09 17:17:51.262 [main] INFO  by.drozdovskaya.ft.service.impl.CustomArrayServiceImpl - Sum: 25
+2026-03-11 23:19:32.044 [main] WARN  by.drozdovskaya.ft.validator.impl.ArrayValidatorImpl - Line does not match regex: 1; 2; x3; 6..5; 77
+2026-03-11 23:19:32.049 [main] WARN  by.drozdovskaya.ft.validator.impl.ArrayValidatorImpl - Line does not match regex: {empty string}
+2026-03-11 23:19:32.049 [main] INFO  by.drozdovskaya.ft.Main - Total arrays in repository: 2
+2026-03-11 23:19:32.095 [main] INFO  by.drozdovskaya.ft.Main - Search result (Sum 10-50): 0 items found
+2026-03-11 23:19:32.124 [main] INFO  by.drozdovskaya.ft.Main - Sort by ID completed. First ID: 1
