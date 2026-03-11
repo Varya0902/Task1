@@ -9,7 +9,6 @@ public class FirstElementComparator implements Comparator<CustomArray> {
         int[] elements1 = o1.getElements();
         int[] elements2 = o2.getElements();
 
-        // Простая проверка: если массив пустой, считаем его значение минимальным
         int val1 = (elements1.length > 0) ? elements1[0] : Integer.MIN_VALUE;
         int val2 = (elements2.length > 0) ? elements2[0] : Integer.MIN_VALUE;
 
